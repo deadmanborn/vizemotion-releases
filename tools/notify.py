@@ -1,8 +1,9 @@
 # E-mail to the people who downloaded a tool, when its new stable version is published
 # (run by .github/workflows/on-release.yml on "release published", not for pre-releases).
 #
-# Newsletter: MailerLite (API key in the repository secret MAILERLITE_TOKEN). Every tool has a group named like its
-# tag prefix, e.g. "ve-measure": the download form on vizemotion.com puts the subscriber there (with consent).
+# Newsletter: MailerLite (API key in the repository secret MAILERLITE_TOKEN). Every tool has one group per language,
+# named like its tag prefix + language, e.g. "ve-measure-pl" / "ve-measure-en": the download form on vizemotion.com
+# puts the subscriber in the group of the page language (with consent). Each e-mail is in one language only.
 # No key, no group or an empty group = nothing is sent (the release itself is never blocked).
 # The FIRST stable release of a tool also goes to the group "lab-nowosci" (people who asked for Lab news):
 # a new tool is the most important news for them (owner, 2026-10-31).
@@ -20,6 +21,20 @@ SIGNATURE = "Adam Iwanowicz, vizemotion Lab"
 LOGO = "https://vizemotion.com/wp-content/themes/vizemotion/assets/mail/ve-znak.png"  # red V + light E, on the dark footer
 API = "https://connect.mailerlite.com/api"
 LAB_GROUP = "lab-nowosci"
+LANGS = ("pl", "en")
+# Texts per language: one e-mail = one language (owner, 2026-10-31: a bilingual button reads badly to an English reader)
+T = {
+    "pl": {"new_subj": "Nowość w Labie: {n}", "new_title": "Nowość w Labie: {n}", "new_intro": "Nowe, darmowe narzędzie w vizemotion Lab. Co potrafi:",
+           "new_btn": "Zobacz narzędzie", "new_why": "Dostajesz to, bo zapisałeś się na nowości z vizemotion Lab.",
+           "ver_subj": "{n} – nowa wersja", "ver_intro": "Jest nowa wersja. Co się zmieniło:", "ver_btn": "Pobierz",
+           "ver_why": "Dostajesz to, bo pobrałeś skrypt i zgodziłeś się na powiadomienia o nowych wersjach.",
+           "page": "https://vizemotion.com/pl/lab/{g}/", "lab": "https://vizemotion.com/pl/lab/", "unsub": "Wypisz się"},
+    "en": {"new_subj": "New in the Lab: {n}", "new_title": "New in the Lab: {n}", "new_intro": "A new free tool in vizemotion Lab. What it does:",
+           "new_btn": "See the tool", "new_why": "You get this because you asked for news from vizemotion Lab.",
+           "ver_subj": "{n} – new version", "ver_intro": "A new version is out. What changed:", "ver_btn": "Download",
+           "ver_why": "You get this because you downloaded the tool and asked for update e-mails.",
+           "page": "https://vizemotion.com/lab/{g}/", "lab": "https://vizemotion.com/lab/", "unsub": "Unsubscribe"},
+}
 
 
 def call(method, path, body=None):
@@ -40,8 +55,8 @@ def changes(body):
     return [re.sub(r"^[-*]\s*", "", ln.strip()) for ln in (body or "").splitlines() if ln.strip().startswith(("-", "*"))]
 
 
-def mail_html(title, intro_pl, intro_en, items, button, url, why_pl, why_en):
-    """Branded e-mail (tables + inline styles, as mail programs need): yellow header, PL, then EN, dark footer with logo."""
+def mail_html(title, intro, items, button, url, why, lab_url):
+    """Branded e-mail in one language (tables + inline styles, as mail programs need): yellow header, dark footer with logo."""
     lst = "".join(f'<li style="margin:0 0 6px">{esc(i)}</li>' for i in items)
     lst = f'<ul style="margin:0 0 18px;padding-left:20px">{lst}</ul>' if lst else ""
     btn = (f'<a href="{url}" style="display:inline-block;padding:13px 22px;border-radius:8px;background:#111214;'
@@ -53,15 +68,14 @@ def mail_html(title, intro_pl, intro_en, items, button, url, why_pl, why_en):
 <tr><td style="background:#ffd400;padding:22px 28px;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase">vizemotion Lab</td></tr>
 <tr><td style="padding:28px 28px 8px">
 <h1 style="margin:0 0 14px;font-size:26px;line-height:1.2">{esc(title)}</h1>
-<p style="margin:0 0 16px">{intro_pl}</p>{lst}<p style="margin:0 0 26px">{btn}</p>
-<p style="margin:0 0 6px;color:#5f6268;font-size:14px;border-top:1px solid #e4e4df;padding-top:18px">{intro_en}</p>
+<p style="margin:0 0 16px">{esc(intro)}</p>{lst}<p style="margin:0 0 10px">{btn}</p>
 </td></tr>
 <tr><td style="padding:8px 28px 26px;font-size:14px;color:#5f6268">{SIGNATURE}</td></tr>
 <tr><td style="background:#111214;padding:22px 28px;color:#a9adb4;font-size:12px;line-height:1.5">
-<a href="https://vizemotion.com/lab/" style="text-decoration:none"><img src="{LOGO}" width="44" height="22" alt="VE" style="vertical-align:middle;border:0"></a>
+<a href="{lab_url}" style="text-decoration:none"><img src="{LOGO}" width="44" height="22" alt="VE" style="vertical-align:middle;border:0"></a>
 <a href="https://vizemotion.com/" style="color:#ffffff;text-decoration:none;font-weight:700;font-size:15px;vertical-align:middle;margin-left:8px">vizemotion</a>
-<p style="margin:14px 0 0">{why_pl}<br>{why_en}</p>
-<p style="margin:10px 0 0"><a href="https://vizemotion.com/lab/" style="color:#ffffff">vizemotion.com/lab</a> · {{$unsubscribe}}</p>
+<p style="margin:14px 0 0">{esc(why)}</p>
+<p style="margin:10px 0 0"><a href="{lab_url}" style="color:#ffffff">vizemotion.com/lab</a> · {{$unsubscribe}}</p>
 </td></tr></table></td></tr></table>"""
 
 
@@ -101,36 +115,33 @@ def main():
         return 0
     group_name, ver = m.group(1), m.group(2)
     name = rel.get("name") or f"{group_name} {ver}"
-    page = f"https://vizemotion.com/lab/{group_name}/"
 
-    # New tool → Lab news (independent of the tool's own group, which is still empty for a brand-new tool)
+    # New tool → Lab news (independent of the tool's own groups, which are still empty for a brand-new tool)
     try:
         if first_stable(group_name, rel.get("tag_name", "")):
-            lab = group_by_name(LAB_GROUP)
-            if lab and lab.get("active_count"):
-                send(lab, f"Nowość w Labie: {name} / New in the Lab",
-                     mail_html(f"Nowość w Labie: {name}",
-                               "Nowe, darmowe narzędzie w vizemotion Lab. Co potrafi:",
-                               f"A new free tool in vizemotion Lab: {esc(name)}. Details and download on the page.",
-                               changes(rel.get("body"))[:5], "Zobacz / See it", page,
-                               "Dostajesz to, bo zapisałeś się na nowości z vizemotion Lab.",
-                               "You get this because you asked for news from vizemotion Lab."),
-                     f"{name} new tool")
-            else:
-                print(f"no subscribers in group {LAB_GROUP}")
+            for lang in LANGS:
+                t = T[lang]
+                lab = group_by_name(f"{LAB_GROUP}-{lang}")
+                if not lab or not lab.get("active_count"):
+                    print(f"no subscribers in group {LAB_GROUP}-{lang}")
+                    continue
+                send(lab, t["new_subj"].format(n=name),
+                     mail_html(t["new_title"].format(n=name), t["new_intro"], changes(rel.get("body"))[:5], t["new_btn"],
+                               t["page"].format(g=group_name), t["new_why"], t["lab"]),
+                     f"{name} new tool {lang}")
     except Exception as e:                     # Lab news must never block the tool's own e-mail
         print(f"lab news skipped: {e}")
 
-    group = group_by_name(group_name)
-    if not group or not group.get("active_count"):
-        print(f"no subscribers in group {group_name}")
-        return 0
-    html = mail_html(name, "Jest nowa wersja. Co się zmieniło:",
-                     f"A new version of {esc(name)} is out. The list above is the changelog; download it from the page.",
-                     changes(rel.get("body")), "Pobierz / Download", page,
-                     "Dostajesz to, bo pobrałeś skrypt i zgodziłeś się na powiadomienia o nowych wersjach.",
-                     "You get this because you downloaded the tool and asked for update e-mails.")
-    send(group, f"{name} – nowa wersja / new version", html, f"{name} release")
+    for lang in LANGS:
+        t = T[lang]
+        group = group_by_name(f"{group_name}-{lang}")
+        if not group or not group.get("active_count"):
+            print(f"no subscribers in group {group_name}-{lang}")
+            continue
+        send(group, t["ver_subj"].format(n=name),
+             mail_html(name, t["ver_intro"], changes(rel.get("body")), t["ver_btn"], t["page"].format(g=group_name),
+                       t["ver_why"], t["lab"]),
+             f"{name} release {lang}")
     return 0
 
 
