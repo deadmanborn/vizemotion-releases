@@ -1,6 +1,7 @@
 # One release = one tool version. After it is published (or edited / deleted) this workflow:
 #   1. rebuilds versions.json from all releases and commits it (the tools, VE Manager and the site read it),
-#   2. e-mails the people who downloaded that tool (stable releases only; needs the secret MAILERLITE_TOKEN),
+#   2. e-mails the people who downloaded that tool (stable releases only; needs the secret MAILERLITE_TOKEN);
+#      the first stable release of a tool also goes to the "lab-nowosci" group,
 #   3. tells vizemotion.com to refresh (optional secret SITE_HOOK_URL).
 name: on-release
 
@@ -49,4 +50,5 @@ jobs:
       - name: E-mail the people who downloaded this tool
         env:
           MAILERLITE_TOKEN: ${{ secrets.MAILERLITE_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}   # first stable release of a tool → also Lab news
         run: python3 tools/notify.py
