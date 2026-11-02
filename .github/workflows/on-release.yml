@@ -23,7 +23,10 @@ jobs:
     env:
       SITE_HOOK_URL: ${{ secrets.SITE_HOOK_URL }}
     steps:
+      # a release event checks out the release tag (detached HEAD): versions.json must be committed on main
       - uses: actions/checkout@v4
+        with:
+          ref: main
       - name: Build versions.json
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -35,7 +38,7 @@ jobs:
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
             git add versions.json
             git commit -m "versions.json: ${{ github.event.release.tag_name || 'manual rebuild' }}"
-            git push
+            git push origin HEAD:main
           fi
       - name: Refresh the site
         if: ${{ env.SITE_HOOK_URL != '' }}
@@ -47,6 +50,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: main
       - name: E-mail the people who downloaded this tool
         env:
           MAILERLITE_TOKEN: ${{ secrets.MAILERLITE_TOKEN }}
