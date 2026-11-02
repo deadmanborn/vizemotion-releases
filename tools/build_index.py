@@ -4,6 +4,8 @@
 # "pre-release" = test channel. versions.json is what the tools, VE Manager and vizemotion.com read:
 #   {"measure": {"name": "VE Measure", "stable": "0.8", "test": "0.9", "page": "...", "notes": "...",
 #                "date": "2026-10-29", "download": "<asset url of the stable>", "download_test": "..."}}
+# A release carries the tool's own installer <tag>.mzp (drag onto a 3ds Max viewport) next to the <tag>.zip
+# VE Manager installs from: "download" points at the .mzp when there is one, "download_zip" at the zip.
 # Nothing is typed twice: publish a release, this file and the site follow.
 
 import json
@@ -51,15 +53,18 @@ def main():
         chan = "test" if r.get("prerelease") else "stable"
         if chan in e and vkey(e[chan]) >= vkey(ver):
             continue
-        asset = (r.get("assets") or [{}])[0].get("browser_download_url", "")
+        urls = [a.get("browser_download_url", "") for a in (r.get("assets") or [])]
+        mzp = next((u for u in urls if u.lower().endswith(".mzp")), "")
+        zp = next((u for u in urls if u.lower().endswith(".zip")), "")
         e[chan] = ver
-        e["download" if chan == "stable" else "download_test"] = asset
+        e["download" if chan == "stable" else "download_test"] = mzp or zp or (urls[0] if urls else "")
+        e["download_zip" if chan == "stable" else "download_zip_test"] = zp
         if chan == "stable":
             e["notes"] = (r.get("body") or "").strip().splitlines()[0][:200] if r.get("body") else ""
             e["date"] = (r.get("published_at") or "")[:10]
     for e in out.values():                                # a test older than the stable is not offered
         if "test" in e and "stable" in e and vkey(e["test"]) <= vkey(e["stable"]):
-            e.pop("test"), e.pop("download_test", None)
+            e.pop("test"), e.pop("download_test", None), e.pop("download_zip_test", None)
     text = json.dumps(dict(sorted(out.items())), indent=2, ensure_ascii=False) + "\n"
     old = open("versions.json", encoding="utf-8").read() if os.path.exists("versions.json") else ""
     if text != old:
