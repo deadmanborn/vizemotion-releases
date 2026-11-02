@@ -1,1 +1,23 @@
-{}
+{
+  "clean": {
+    "name": "VE Clean",
+    "page": "https://vizemotion.com/lab/ve-clean/",
+    "test": "2.0",
+    "download_test": "https://github.com/deadmanborn/vizemotion-releases/releases/download/ve-clean-2.0/ve-clean-2.0.mzp",
+    "download_zip_test": "https://github.com/deadmanborn/vizemotion-releases/releases/download/ve-clean-2.0/ve-clean-2.0.zip",
+    "stable": "1.78",
+    "download": "https://github.com/deadmanborn/vizemotion-releases/releases/download/ve-clean-1.78/ve-clean-1.78.mzp",
+    "download_zip": "https://github.com/deadmanborn/vizemotion-releases/releases/download/ve-clean-1.78/ve-clean-1.78.zip",
+    "notes": "Clean tab in sections; uneven scale / Reset XForm, disabled modifiers, ungroup",
+    "date": "2026-10-31"
+  },
+  "scene_doctor": {
+    "name": "VE Scene Doctor",
+    "page": "https://vizemotion.com/lab/ve-scene-doctor/",
+    "stable": "0.6.3",
+    "download": "https://github.com/deadmanborn/vizemotion-releases/releases/download/ve-scene-doctor-0.6.3/ve-scene-doctor-0.6.3.mzp",
+    "download_zip": "https://github.com/deadmanborn/vizemotion-releases/releases/download/ve-scene-doctor-0.6.3/ve-scene-doctor-0.6.3.zip",
+    "notes": "Stable, full testing in progress. Copies to instances also for rotated / scaled copies (checked vertex by vertex), statistics switch follows the 7 key",
+    "date": "2026-11-01"
+  }
+}
