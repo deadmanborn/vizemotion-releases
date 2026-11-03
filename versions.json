@@ -11,6 +11,33 @@
     "notes": "Clean tab in sections; uneven scale / Reset XForm, disabled modifiers, ungroup",
     "date": "2026-10-31"
   },
+  "max_agent": {
+    "name": "VE Max Agent",
+    "page": "https://vizemotion.com/lab/ve-max-agent/",
+    "stable": "2.3",
+    "download": "https://github.com/deadmanborn/vizemotion-releases/releases/download/ve-max-agent-2.3/ve-max-agent-2.3.mzp",
+    "download_zip": "",
+    "notes": "VE Max Agent 2.3",
+    "date": "2026-11-03"
+  },
+  "measure": {
+    "name": "VE Measure",
+    "page": "https://vizemotion.com/lab/ve-measure/",
+    "stable": "0.7",
+    "download": "https://github.com/deadmanborn/vizemotion-releases/releases/download/ve-measure-0.7/ve-measure-0.7.mzp",
+    "download_zip": "",
+    "notes": "VE Measure 0.7",
+    "date": "2026-11-03"
+  },
+  "pivot": {
+    "name": "VE Pivot Placer",
+    "page": "https://vizemotion.com/lab/ve-pivot/",
+    "stable": "0.2",
+    "download": "https://github.com/deadmanborn/vizemotion-releases/releases/download/ve-pivot-0.2/ve-pivot-0.2.mzp",
+    "download_zip": "",
+    "notes": "VE Pivot Placer 0.2",
+    "date": "2026-11-03"
+  },
   "scene_doctor": {
     "name": "VE Scene Doctor",
     "page": "https://vizemotion.com/lab/ve-scene-doctor/",
