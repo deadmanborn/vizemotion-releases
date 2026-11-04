@@ -41,10 +41,10 @@
   "scene_doctor": {
     "name": "VE Scene Doctor",
     "page": "https://vizemotion.com/lab/ve-scene-doctor/",
-    "stable": "0.6.5",
-    "download": "https://github.com/deadmanborn/vizemotion-releases/releases/download/ve-scene-doctor-0.6.5/ve-scene-doctor-0.6.5.mzp",
-    "download_zip": "https://github.com/deadmanborn/vizemotion-releases/releases/download/ve-scene-doctor-0.6.5/ve-scene-doctor-0.6.5.zip",
-    "notes": "Stable, full testing in progress. Corona Physical materials count as Corona. Install: drag the .mzp onto 3ds Max",
-    "date": "2026-11-03"
+    "stable": "0.6.6",
+    "download": "https://github.com/deadmanborn/vizemotion-releases/releases/download/ve-scene-doctor-0.6.6/ve-scene-doctor-0.6.6.mzp",
+    "download_zip": "https://github.com/deadmanborn/vizemotion-releases/releases/download/ve-scene-doctor-0.6.6/ve-scene-doctor-0.6.6.zip",
+    "notes": "Stable, full testing in progress. Fix: Materials scan listed 0 materials. Uninstall... in the Vizemotion Tools menu. Install: drag the .mzp onto 3ds Max",
+    "date": "2026-11-04"
   }
 }
