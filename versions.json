@@ -41,10 +41,10 @@
   "scene_doctor": {
     "name": "VE Scene Doctor",
     "page": "https://vizemotion.com/lab/ve-scene-doctor/",
-    "stable": "0.6.6",
-    "download": "https://github.com/deadmanborn/vizemotion-releases/releases/download/ve-scene-doctor-0.6.6/ve-scene-doctor-0.6.6.mzp",
-    "download_zip": "https://github.com/deadmanborn/vizemotion-releases/releases/download/ve-scene-doctor-0.6.6/ve-scene-doctor-0.6.6.zip",
-    "notes": "Stable, full testing in progress. Fix: Materials scan listed 0 materials. Uninstall... in the Vizemotion Tools menu. Install: drag the .mzp onto 3ds Max",
+    "stable": "0.6.7",
+    "download": "https://github.com/deadmanborn/vizemotion-releases/releases/download/ve-scene-doctor-0.6.7/ve-scene-doctor-0.6.7.mzp",
+    "download_zip": "https://github.com/deadmanborn/vizemotion-releases/releases/download/ve-scene-doctor-0.6.7/ve-scene-doctor-0.6.7.zip",
+    "notes": "Stable, full testing in progress. Viewport tab: Background and layout card - layout 2 / 4, gradient / solid color / environment, HDRI file and size, spherical HDRI rotation, Set button. Install: drag ",
     "date": "2026-11-04"
   }
 }
