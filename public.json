@@ -1,0 +1,11 @@
+{
+  "_": "Tools offered by the public VE Manager (stable versions only). Add a tool here when its page is live; the workflow rebuilds ve-tools.json.",
+  "tools": {
+    "scene_doctor": {
+      "about": "What slows down the viewport, Work / Render mode, heavy objects and textures"
+    },
+    "clean": {
+      "about": "Scene cleanup, one model's geometry (size, pivot, check, reduce / remesh), materials, wirecolor, SketchUp"
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "schema": 1,
+  "tools": {
+    "clean": {
+      "name": "VE Clean",
+      "about": "Scene cleanup, one model's geometry (size, pivot, check, reduce / remesh), materials, wirecolor, SketchUp",
+      "entry": "ve_clean.ms",
+      "page": "https://vizemotion.com/lab/ve-clean/",
+      "channels": {
+        "stable": {
+          "version": "1.78",
+          "tag": "ve-clean-1.78",
+          "zip": "ve-clean-1.78.zip",
+          "url": "https://github.com/deadmanborn/vizemotion-releases/releases/download/ve-clean-1.78/ve-clean-1.78.zip",
+          "date": "2026-10-31",
+          "notes": "Clean tab in sections; uneven scale / Reset XForm, disabled modifiers, ungroup"
+        }
+      }
+    },
+    "scene_doctor": {
+      "name": "VE Scene Doctor",
+      "about": "What slows down the viewport, Work / Render mode, heavy objects and textures",
+      "entry": "ve_scene_doctor.ms",
+      "page": "https://vizemotion.com/lab/ve-scene-doctor/",
+      "channels": {
+        "stable": {
+          "version": "0.6.7",
+          "tag": "ve-scene-doctor-0.6.7",
+          "zip": "ve-scene-doctor-0.6.7.zip",
+          "url": "https://github.com/deadmanborn/vizemotion-releases/releases/download/ve-scene-doctor-0.6.7/ve-scene-doctor-0.6.7.zip",
+          "date": "2026-11-04",
+          "notes": "Stable, full testing in progress. Viewport tab: Background and layout card - layout 2 / 4, gradient / solid color / environment, HDRI file and size, spherical HDRI rotation, Set button. Install: drag "
+        }
+      }
+    }
+  }
+}
