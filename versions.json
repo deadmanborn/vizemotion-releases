@@ -21,11 +21,11 @@
   "max_agent": {
     "name": "VE Max Agent",
     "page": "https://vizemotion.com/lab/ve-max-agent/",
-    "stable": "2.3",
-    "download": "https://github.com/deadmanborn/vizemotion-releases/releases/download/ve-max-agent-2.3/ve-max-agent-2.3.mzp",
-    "download_zip": "",
-    "notes": "VE Max Agent 2.3",
-    "date": "2026-11-03"
+    "stable": "2.4",
+    "download": "https://github.com/deadmanborn/vizemotion-releases/releases/download/ve-max-agent-2.4/ve-max-agent-2.4.mzp",
+    "download_zip": "https://github.com/deadmanborn/vizemotion-releases/releases/download/ve-max-agent-2.4/ve-max-agent-2.4.zip",
+    "notes": "UI 2.0: Stop Agent in the header, instance in the subtitle, Send logs",
+    "date": "2026-11-06"
   },
   "measure": {
     "name": "VE Measure",
