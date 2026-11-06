@@ -12,6 +12,7 @@ import json
 import os
 import re
 import sys
+import urllib.error
 import urllib.request
 
 TOKEN = os.environ.get("MAILERLITE_TOKEN", "")
@@ -41,9 +42,14 @@ def call(method, path, body=None):
     req = urllib.request.Request(API + path, method=method, data=json.dumps(body).encode() if body is not None else None,
                                  headers={"Authorization": f"Bearer {TOKEN}", "Content-Type": "application/json",
                                           "Accept": "application/json"})
-    with urllib.request.urlopen(req, timeout=30) as r:
-        txt = r.read().decode("utf-8")
-        return json.loads(txt) if txt else {}
+    try:
+        with urllib.request.urlopen(req, timeout=30) as r:
+            txt = r.read().decode("utf-8")
+            return json.loads(txt) if txt else {}
+    except urllib.error.HTTPError as e:      # shown as a public annotation of the run: the cause without the logs
+        detail = e.read().decode("utf-8", "replace")[:400].replace("\n", " ")
+        print(f"::error::MailerLite {method} {path.split('?')[0]} -> HTTP {e.code}: {detail}")
+        raise
 
 
 def esc(t):
