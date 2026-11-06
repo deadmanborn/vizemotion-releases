@@ -1,31 +1,96 @@
 {
-  "_": "Adverts in the Discover tab of VE Manager. Order = order on screen. Optional: \"image\" (https, about 520x160 px), \"from\" / \"to\" (YYYY-MM-DD). A category shows as a filter when one of its cards is shown.",
+  "_": "Adverts in the Discover tab of VE Manager. Order = order on screen. Optional: \"url_pl\" (Polish page, VE Manager 0.6.2+), \"image\" (https, about 520x160 px), \"from\" / \"to\" (YYYY-MM-DD). A category shows as a filter when one of its cards is shown.",
   "categories": [
-    {"id": "lab", "en": "Lab", "pl": "Lab"},
-    {"id": "courses", "en": "Courses", "pl": "Kursy"},
-    {"id": "support", "en": "Support", "pl": "Wsparcie"}
+    {
+      "id": "lab",
+      "en": "Lab",
+      "pl": "Lab"
+    },
+    {
+      "id": "courses",
+      "en": "Courses",
+      "pl": "Kursy"
+    },
+    {
+      "id": "tutorials",
+      "en": "Tutorials",
+      "pl": "Tutoriale"
+    },
+    {
+      "id": "support",
+      "en": "Support",
+      "pl": "Wsparcie"
+    }
   ],
   "cards": [
     {
       "id": "lab",
       "category": "lab",
-      "title": {"en": "vizemotion Lab", "pl": "vizemotion Lab"},
+      "title": {
+        "en": "vizemotion Lab",
+        "pl": "vizemotion Lab"
+      },
       "text": {
         "en": "Free tools for 3ds Max from a visualization studio: scene cleanup, viewport speed, pivots, measuring and more. New tools and test versions show up in the Lab first.",
         "pl": "Darmowe narzędzia do 3ds Max od studia wizualizacji: sprzątanie sceny, szybki viewport, pivoty, wymiary i więcej. Nowe narzędzia i wersje testowe pojawiają się najpierw w Labie."
       },
-      "button": {"en": "Open the Lab ↗", "pl": "Otwórz Lab ↗"},
+      "button": {
+        "en": "Open the Lab ↗",
+        "pl": "Otwórz Lab ↗"
+      },
       "url": "https://vizemotion.com/lab/"
+    },
+    {
+      "id": "tut-scene-doctor",
+      "category": "tutorials",
+      "title": {
+        "en": "VE Scene Doctor - video tutorials",
+        "pl": "VE Scene Doctor - tutoriale wideo"
+      },
+      "text": {
+        "en": "First scene audit, copies to instances, cleaning up a SketchUp import, maps and Corona. The first videos are on the way.",
+        "pl": "Pierwszy audyt sceny, duplikaty na instancje, porządek po imporcie ze SketchUpa, mapy i Corona. Pierwsze filmy są w drodze."
+      },
+      "button": {
+        "en": "See the tutorials ↗",
+        "pl": "Zobacz tutoriale ↗"
+      },
+      "url": "https://vizemotion.com/lab/ve-scene-doctor/#tutorials",
+      "url_pl": "https://vizemotion.com/pl/lab/ve-scene-doctor/#tutoriale"
+    },
+    {
+      "id": "tut-clean",
+      "category": "tutorials",
+      "title": {
+        "en": "VE Clean - video tutorials",
+        "pl": "VE Clean - tutoriale wideo"
+      },
+      "text": {
+        "en": "A generated model ready for the scene, SketchUp components, splines from CAD, materials and Corona. The first videos are on the way.",
+        "pl": "Model z generatora gotowy do sceny, komponenty ze SketchUpa, splajny z CAD, materiały i Corona. Pierwsze filmy są w drodze."
+      },
+      "button": {
+        "en": "See the tutorials ↗",
+        "pl": "Zobacz tutoriale ↗"
+      },
+      "url": "https://vizemotion.com/lab/ve-clean/#tutorials",
+      "url_pl": "https://vizemotion.com/pl/lab/ve-clean/#tutoriale"
     },
     {
       "id": "kofi",
       "category": "support",
-      "title": {"en": "Like the tools? Buy me a coffee", "pl": "Podobają Ci się narzędzia? Postaw kawę"},
+      "title": {
+        "en": "Like the tools? Buy me a coffee",
+        "pl": "Podobają Ci się narzędzia? Postaw kawę"
+      },
       "text": {
         "en": "The VE tools are free. A coffee on Ko-fi keeps new tools and updates coming.",
         "pl": "Narzędzia VE są darmowe. Kawa na Ko-fi pomaga robić kolejne narzędzia i aktualizacje."
       },
-      "button": {"en": "Ko-fi ↗", "pl": "Ko-fi ↗"},
+      "button": {
+        "en": "Ko-fi ↗",
+        "pl": "Ko-fi ↗"
+      },
       "url": "https://ko-fi.com/onedeadman"
     }
   ]
