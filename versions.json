@@ -11,6 +11,13 @@
     "notes": "Clean tab in sections; uneven scale / Reset XForm, disabled modifiers, ungroup",
     "date": "2026-10-31"
   },
+  "manager": {
+    "name": "VE Manager",
+    "page": "https://vizemotion.com/lab/ve-manager/",
+    "test": "0.6",
+    "download_test": "https://github.com/deadmanborn/vizemotion-releases/releases/download/ve-manager-0.6/ve-manager-0.6.mzp",
+    "download_zip_test": ""
+  },
   "max_agent": {
     "name": "VE Max Agent",
     "page": "https://vizemotion.com/lab/ve-max-agent/",
