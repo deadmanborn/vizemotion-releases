@@ -7,6 +7,9 @@
 # A release carries the tool's own installer <tag>.mzp (drag onto a 3ds Max viewport) next to the <tag>.zip
 # VE Manager installs from: "download" points at the .mzp when there is one, "download_zip" at the zip.
 # Nothing is typed twice: publish a release, this file and the site follow.
+#
+# It also builds ve-tools.json, the catalog of the public VE Manager: only the tools listed in public.json, their
+# newest stable release with a zip, with the full download address ("url") of that zip. Test versions never go there.
 
 import json
 import os
@@ -32,6 +35,46 @@ def api(url):
 
 def vkey(v):
     return [int(x) for x in v.split(".")]
+
+
+def write(path, data):
+    text = json.dumps(data, indent=2, ensure_ascii=False) + "\n"
+    old = open(path, encoding="utf-8").read() if os.path.exists(path) else ""
+    if text != old:
+        open(path, "w", encoding="utf-8").write(text)
+        print(f"{path} updated")
+    else:
+        print(f"{path} unchanged")
+
+
+def catalog(releases, public):
+    """ve-tools.json for the public VE Manager: {"schema": 1, "tools": {id: {name, about, entry, page, channels:
+    {"stable": {version, tag, zip, url, date, notes}}}}} - the published tools only, stable only."""
+    tools = {}
+    for r in releases:
+        m = TAG.match(r.get("tag_name", ""))
+        if not m or r.get("draft") or r.get("prerelease"):
+            continue
+        slug, ver = m.group(1), m.group(2)
+        tid = slug.replace("-", "_")
+        if tid not in public:
+            continue
+        zp = next((a for a in (r.get("assets") or []) if a.get("name", "").lower().endswith(".zip")), None)
+        if not zp:
+            continue                                      # VE Manager installs zips only
+        have = tools.get(tid, {}).get("channels", {}).get("stable")
+        if have and vkey(have["version"]) >= vkey(ver):
+            continue
+        body = (r.get("body") or "").strip()
+        tools[tid] = {
+            "name": NAMES.get(slug, f"VE {slug.title()}"),
+            "about": public[tid].get("about", ""),
+            "entry": public[tid].get("entry", f"ve_{tid}.ms"),
+            "page": SITE.format(slug=f"ve-{slug}"),
+            "channels": {"stable": {
+                "version": ver, "tag": r["tag_name"], "zip": zp["name"], "url": zp.get("browser_download_url", ""),
+                "date": (r.get("published_at") or "")[:10], "notes": body.splitlines()[0][:200] if body else ""}}}
+    return {"schema": 1, "tools": dict(sorted(tools.items()))}
 
 
 def main():
@@ -65,13 +108,10 @@ def main():
     for e in out.values():                                # a test older than the stable is not offered
         if "test" in e and "stable" in e and vkey(e["test"]) <= vkey(e["stable"]):
             e.pop("test"), e.pop("download_test", None), e.pop("download_zip_test", None)
-    text = json.dumps(dict(sorted(out.items())), indent=2, ensure_ascii=False) + "\n"
-    old = open("versions.json", encoding="utf-8").read() if os.path.exists("versions.json") else ""
-    if text != old:
-        open("versions.json", "w", encoding="utf-8").write(text)
-        print("versions.json updated")
-    else:
-        print("versions.json unchanged")
+    write("versions.json", dict(sorted(out.items())))
+    with open("public.json", encoding="utf-8") as f:
+        public = json.load(f).get("tools", {})
+    write("ve-tools.json", catalog(releases, public))
 
 
 if __name__ == "__main__":

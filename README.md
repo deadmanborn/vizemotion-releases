@@ -8,6 +8,9 @@ always link the newest version.
   **Pre-release** = test version.
 - `versions.json` (built automatically from the releases) is read by the tools, VE Manager and vizemotion.com:
   `https://raw.githubusercontent.com/deadmanborn/vizemotion-releases/main/versions.json`
+- `ve-tools.json` (also built automatically) is the catalog of the public **VE Manager**: only the tools listed in
+  `public.json`, stable versions only. To offer a tool in VE Manager, add it to `public.json` (the workflow runs on
+  that change). VE Manager itself: release `ve-manager-<version>`, file `ve-manager-<version>.mzp`.
 - The source code lives in private repositories; this repository holds only the packages.
 
 ## How a release happens (nothing is typed twice)
