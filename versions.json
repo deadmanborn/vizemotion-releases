@@ -39,6 +39,9 @@
   "pivot": {
     "name": "VE Pivot Placer",
     "page": "https://vizemotion.com/lab/ve-pivot/",
+    "test": "0.6.2",
+    "download_test": "https://github.com/deadmanborn/vizemotion-releases/releases/download/ve-pivot-0.6.2/ve-pivot-0.6.2.mzp",
+    "download_zip_test": "https://github.com/deadmanborn/vizemotion-releases/releases/download/ve-pivot-0.6.2/ve-pivot-0.6.2.zip",
     "stable": "0.6.1",
     "download": "https://github.com/deadmanborn/vizemotion-releases/releases/download/ve-pivot-0.6.1/ve-pivot-0.6.1.mzp",
     "download_zip": "https://github.com/deadmanborn/vizemotion-releases/releases/download/ve-pivot-0.6.1/ve-pivot-0.6.1.zip",
