@@ -14,8 +14,8 @@
   "manager": {
     "name": "VE Manager",
     "page": "https://vizemotion.com/lab/ve-manager/",
-    "test": "0.6.2",
-    "download_test": "https://github.com/deadmanborn/vizemotion-releases/releases/download/ve-manager-0.6.2/ve-manager-0.6.2.mzp",
+    "test": "0.6.4",
+    "download_test": "https://github.com/deadmanborn/vizemotion-releases/releases/download/ve-manager-0.6.4/ve-manager-0.6.4.mzp",
     "download_zip_test": ""
   },
   "max_agent": {
