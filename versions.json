@@ -48,10 +48,10 @@
   "scene_doctor": {
     "name": "VE Scene Doctor",
     "page": "https://vizemotion.com/lab/ve-scene-doctor/",
-    "stable": "0.6.7",
-    "download": "https://github.com/deadmanborn/vizemotion-releases/releases/download/ve-scene-doctor-0.6.7/ve-scene-doctor-0.6.7.mzp",
-    "download_zip": "https://github.com/deadmanborn/vizemotion-releases/releases/download/ve-scene-doctor-0.6.7/ve-scene-doctor-0.6.7.zip",
-    "notes": "Stable, full testing in progress. Viewport tab: Background and layout card - layout 2 / 4, gradient / solid color / environment, HDRI file and size, spherical HDRI rotation, Set button. Install: drag ",
-    "date": "2026-11-04"
+    "stable": "0.6.9",
+    "download": "https://github.com/deadmanborn/vizemotion-releases/releases/download/ve-scene-doctor-0.6.9/ve-scene-doctor-0.6.9.mzp",
+    "download_zip": "https://github.com/deadmanborn/vizemotion-releases/releases/download/ve-scene-doctor-0.6.9/ve-scene-doctor-0.6.9.zip",
+    "notes": "After testing: many bugs fixed and changes reported by users",
+    "date": "2026-11-10"
   }
 }
