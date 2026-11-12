@@ -1,5 +1,5 @@
 {
-  "_": "Adverts in the Discover tab of VE Manager. Order = order on screen. Optional: \"url_pl\" (Polish page, VE Manager 0.6.2+), \"image\" (https, about 520x160 px), \"from\" / \"to\" (YYYY-MM-DD). A category shows as a filter when one of its cards is shown.",
+  "_": "Adverts in the Discover tab of VE Manager. Order = order on screen. Optional: \"url_pl\" (Polish page, VE Manager 0.6.2+), \"from\" / \"to\" (YYYY-MM-DD). A category shows as a filter when one of its cards is shown. Text only (VE Manager 0.7+ ignores \"image\"; owner: no pictures, no video).",
   "categories": [
     {
       "id": "lab",
@@ -44,16 +44,16 @@
       "id": "tut-scene-doctor",
       "category": "tutorials",
       "title": {
-        "en": "VE Scene Doctor - video tutorials",
-        "pl": "VE Scene Doctor - tutoriale wideo"
+        "en": "VE Scene Doctor - guides",
+        "pl": "VE Scene Doctor - poradniki"
       },
       "text": {
-        "en": "First scene audit, copies to instances, cleaning up a SketchUp import, maps and Corona. The first videos are on the way.",
-        "pl": "Pierwszy audyt sceny, duplikaty na instancje, porządek po imporcie ze SketchUpa, mapy i Corona. Pierwsze filmy są w drodze."
+        "en": "First scene audit, copies to instances, cleaning up a SketchUp import, maps and Corona.",
+        "pl": "Pierwszy audyt sceny, duplikaty na instancje, porządek po imporcie ze SketchUpa, mapy i Corona."
       },
       "button": {
-        "en": "See the tutorials ↗",
-        "pl": "Zobacz tutoriale ↗"
+        "en": "See the guides ↗",
+        "pl": "Zobacz poradniki ↗"
       },
       "url": "https://vizemotion.com/lab/ve-scene-doctor/#tutorials",
       "url_pl": "https://vizemotion.com/pl/lab/ve-scene-doctor/#tutoriale"
@@ -62,16 +62,16 @@
       "id": "tut-clean",
       "category": "tutorials",
       "title": {
-        "en": "VE Clean - video tutorials",
-        "pl": "VE Clean - tutoriale wideo"
+        "en": "VE Clean - guides",
+        "pl": "VE Clean - poradniki"
       },
       "text": {
-        "en": "A generated model ready for the scene, SketchUp components, splines from CAD, materials and Corona. The first videos are on the way.",
-        "pl": "Model z generatora gotowy do sceny, komponenty ze SketchUpa, splajny z CAD, materiały i Corona. Pierwsze filmy są w drodze."
+        "en": "A generated model ready for the scene, SketchUp components, splines from CAD, materials and Corona.",
+        "pl": "Model z generatora gotowy do sceny, komponenty ze SketchUpa, splajny z CAD, materiały i Corona."
       },
       "button": {
-        "en": "See the tutorials ↗",
-        "pl": "Zobacz tutoriale ↗"
+        "en": "See the guides ↗",
+        "pl": "Zobacz poradniki ↗"
       },
       "url": "https://vizemotion.com/lab/ve-clean/#tutorials",
       "url_pl": "https://vizemotion.com/pl/lab/ve-clean/#tutoriale"

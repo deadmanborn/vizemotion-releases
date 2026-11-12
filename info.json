@@ -1,0 +1,51 @@
+{
+  "_": "Text under \"More\" for each tool in VE Manager 0.7+ and the support note. Edit and save - no new VE Manager needed. Text only (no pictures, no video). Lists = one line per point, \"en\" and \"pl\" (English shows when Polish is missing). Tool keys as in ve-tools.json: clean, scene_doctor, pivot, measure, gutter, panels, roof. Parts of a tool: how (numbered steps), tips, new (what's new; when missing the release notes show), plan (what we plan), links [{\"title\": {\"en\", \"pl\"}, \"url\", \"url_pl\"}]. Missing parts are not shown. support.every = the note shows on every N-th opening of VE Manager (people can switch it off in Settings).",
+  "support": {
+    "every": 10,
+    "title": {
+      "en": "The tools are free. Coffee for the author is not. ☕",
+      "pl": "Skrypty są za darmo. Kawa dla autora nie. ☕"
+    },
+    "text": {
+      "en": "If the VE tools save you time, a coffee on Ko-fi helps make the next ones.",
+      "pl": "Jeśli narzędzia VE oszczędzają Ci czas, kawa na Ko-fi pomaga robić kolejne."
+    },
+    "button": {
+      "en": "Support ☕",
+      "pl": "Wesprzyj ☕"
+    },
+    "url": "https://ko-fi.com/onedeadman"
+  },
+  "tools": {
+    "clean": {
+      "how": {
+        "en": [],
+        "pl": []
+      },
+      "tips": {
+        "en": [],
+        "pl": []
+      },
+      "plan": {
+        "en": [],
+        "pl": []
+      },
+      "links": []
+    },
+    "scene_doctor": {
+      "how": {
+        "en": [],
+        "pl": []
+      },
+      "tips": {
+        "en": [],
+        "pl": []
+      },
+      "plan": {
+        "en": [],
+        "pl": []
+      },
+      "links": []
+    }
+  }
+}
