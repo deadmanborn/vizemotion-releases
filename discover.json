@@ -1,5 +1,5 @@
 {
-  "_": "Adverts in the Discover tab of VE Manager. Order = order on screen. Optional: \"url_pl\" (Polish page, VE Manager 0.6.2+), \"from\" / \"to\" (YYYY-MM-DD). A category shows as a filter when one of its cards is shown. Text only (VE Manager 0.7+ ignores \"image\"; owner: no pictures, no video).",
+  "_": "Adverts in the Discover tab of VE Manager. Order = order on screen. Optional: \"url_pl\" (Polish page, VE Manager 0.6.2+), \"from\" / \"to\" (YYYY-MM-DD). A category shows as a filter when one of its cards is shown. Optional \"image\": a small PNG / JPG (up to 400 KB, about 16:9) from this repository's images/ folder - no video. Category \"studio\" = cards about vizemotion.com (visualisation studio).",
   "categories": [
     {
       "id": "lab",
@@ -20,6 +20,11 @@
       "id": "support",
       "en": "Support",
       "pl": "Wsparcie"
+    },
+    {
+      "id": "studio",
+      "en": "Studio",
+      "pl": "Studio"
     }
   ],
   "cards": [
