@@ -14,10 +14,10 @@
   "manager": {
     "name": "VE Manager",
     "page": "https://vizemotion.com/lab/ve-manager/",
-    "stable": "0.7.4",
-    "download": "https://github.com/deadmanborn/vizemotion-releases/releases/download/ve-manager-0.7.4/ve-manager-0.7.4.mzp",
+    "stable": "0.7.5",
+    "download": "https://github.com/deadmanborn/vizemotion-releases/releases/download/ve-manager-0.7.5/ve-manager-0.7.5.mzp",
     "download_zip": "",
-    "notes": "VE Manager tells about its own updates and installs them (Update VE Manager); stable versions only",
+    "notes": "Support note easier to see; See all in Discover drawn once",
     "date": "2026-11-16"
   },
   "max_agent": {
