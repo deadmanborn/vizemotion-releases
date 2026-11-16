@@ -14,10 +14,10 @@
   "manager": {
     "name": "VE Manager",
     "page": "https://vizemotion.com/lab/ve-manager/",
-    "stable": "0.7.3",
-    "download": "https://github.com/deadmanborn/vizemotion-releases/releases/download/ve-manager-0.7.3/ve-manager-0.7.3.mzp",
+    "stable": "0.7.4",
+    "download": "https://github.com/deadmanborn/vizemotion-releases/releases/download/ve-manager-0.7.4/ve-manager-0.7.4.mzp",
     "download_zip": "",
-    "notes": "One public edition: Install for new tools, Uninstall VE Manager in Settings, Discover with 3ds Max scripts, tutorials and apps, Coming soon on Tools",
+    "notes": "VE Manager tells about its own updates and installs them (Update VE Manager); stable versions only",
     "date": "2026-11-16"
   },
   "max_agent": {
