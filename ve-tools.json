@@ -17,6 +17,38 @@
         }
       }
     },
+    "measure": {
+      "name": "VE Measure",
+      "about": "Sizes table in cm and live dimensions in the viewport",
+      "entry": "ve_measure.ms",
+      "page": "https://vizemotion.com/lab/ve-measure/",
+      "channels": {
+        "stable": {
+          "version": "0.7",
+          "tag": "ve-measure-0.7",
+          "zip": "ve-measure-0.7.zip",
+          "url": "https://github.com/deadmanborn/vizemotion-releases/releases/download/ve-measure-0.7/ve-measure-0.7.zip",
+          "date": "2026-11-03",
+          "notes": "VE Measure 0.7"
+        }
+      }
+    },
+    "pivot": {
+      "name": "VE Pivot Placer",
+      "about": "Pivot on bounding-box points or on a surface, align rotation",
+      "entry": "ve_pivot.ms",
+      "page": "https://vizemotion.com/lab/ve-pivot/",
+      "channels": {
+        "stable": {
+          "version": "0.6.14",
+          "tag": "ve-pivot-0.6.14",
+          "zip": "ve-pivot-0.6.14.zip",
+          "url": "https://github.com/deadmanborn/vizemotion-releases/releases/download/ve-pivot-0.6.14/ve-pivot-0.6.14.zip",
+          "date": "2026-11-16",
+          "notes": "Working pivot only on its own tab (no jumps), Place Working Pivot, dots hit the corners after the pivot is turned, new Rotate tab: Align Pivot to Object, Copy rotation, Place on face. Surface tools in"
+        }
+      }
+    },
     "scene_doctor": {
       "name": "VE Scene Doctor",
       "about": "What slows down the viewport, Work / Render mode, heavy objects and textures",
