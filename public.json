@@ -6,6 +6,12 @@
     },
     "clean": {
       "about": "Scene cleanup, one model's geometry (size, pivot, check, reduce / remesh), materials, wirecolor, SketchUp"
+    },
+    "pivot": {
+      "about": "Pivot on bounding-box points or on a surface, align rotation"
+    },
+    "measure": {
+      "about": "Sizes table in cm and live dimensions in the viewport"
     }
   }
 }
