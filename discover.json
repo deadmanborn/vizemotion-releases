@@ -1,5 +1,5 @@
 {
-  "_": "Adverts in the Discover tab of VE Manager. Order = order on screen. Optional: \"url_pl\" (Polish page, VE Manager 0.6.2+), \"from\" / \"to\" (YYYY-MM-DD). A category shows as a filter when one of its cards is shown. Optional \"image\": a small PNG / JPG (up to 400 KB, about 16:9) from this repository's images/ folder - no video. Category \"studio\" = cards about vizemotion.com (visualisation studio).",
+  "_": "Adverts in the Discover tab of VE Manager. Order = order on screen. Optional: \"url_pl\" (Polish page, VE Manager 0.6.2+), \"from\" / \"to\" (YYYY-MM-DD). A category shows as a filter when one of its cards is shown. Optional \"image\": a small PNG / JPG (up to 400 KB, about 16:9) from this repository's images/ folder - no video. Category \"studio\" = cards about vizemotion.com (visualisation studio). \"soon\": true = a \"Soon\" label, the card may have no \"url\" (VE Manager 0.7.3+; older versions skip cards without \"url\"); category \"scripts\" + \"soon\" + \"tool_id\" is also listed under COMING SOON on the Tools tab.",
   "categories": [
     {
       "id": "lab",
@@ -7,9 +7,19 @@
       "pl": "Lab"
     },
     {
+      "id": "scripts",
+      "en": "3ds Max scripts",
+      "pl": "Skrypty 3ds Max"
+    },
+    {
       "id": "courses",
       "en": "Courses",
       "pl": "Kursy"
+    },
+    {
+      "id": "apps",
+      "en": "Apps",
+      "pl": "Aplikacje"
     },
     {
       "id": "tutorials",
@@ -46,6 +56,48 @@
       "url": "https://vizemotion.com/lab/"
     },
     {
+      "id": "soon-roof",
+      "category": "scripts",
+      "soon": true,
+      "tool_id": "roof",
+      "title": {
+        "en": "VE Roof",
+        "pl": "VE Roof"
+      },
+      "text": {
+        "en": "Build any roof by editing its elements, with sections and roof flashings.",
+        "pl": "Budowanie dowolnego dachu przez edycję elementów, z przekrojami i obróbkami dachowymi."
+      }
+    },
+    {
+      "id": "soon-gutter",
+      "category": "scripts",
+      "soon": true,
+      "tool_id": "gutter",
+      "title": {
+        "en": "VE Gutter",
+        "pl": "VE Gutter"
+      },
+      "text": {
+        "en": "Gutter and downpipe systems built on your own splines.",
+        "pl": "Systemy rynien i rur spustowych budowane na Twoich splajnach."
+      }
+    },
+    {
+      "id": "soon-plane",
+      "category": "scripts",
+      "soon": true,
+      "tool_id": "plane",
+      "title": {
+        "en": "VE Plane",
+        "pl": "VE Plane"
+      },
+      "text": {
+        "en": "Parametric surfaces you can change by values at any time.",
+        "pl": "Parametryczne powierzchnie, które w każdej chwili zmieniasz wartościami."
+      }
+    },
+    {
       "id": "tut-scene-doctor",
       "category": "tutorials",
       "title": {
@@ -80,6 +132,62 @@
       },
       "url": "https://vizemotion.com/lab/ve-clean/#tutorials",
       "url_pl": "https://vizemotion.com/pl/lab/ve-clean/#tutoriale"
+    },
+    {
+      "id": "soon-tutorials",
+      "category": "tutorials",
+      "soon": true,
+      "title": {
+        "en": "Tutorials for every tool",
+        "pl": "Poradniki do każdego narzędzia"
+      },
+      "text": {
+        "en": "Step by step: from the first run to work on a real scene.",
+        "pl": "Krok po kroku: od pierwszego uruchomienia do pracy na prawdziwej scenie."
+      }
+    },
+    {
+      "id": "app-meblomiar",
+      "category": "apps",
+      "title": {
+        "en": "Meblomiar - in the browser",
+        "pl": "Meblomiar - wersja w przeglądarce"
+      },
+      "text": {
+        "en": "Furniture from a sketch, through 3D editing in the browser, to cut lists and templates.",
+        "pl": "Budowanie mebli od szkicu, przez edycję 3D w przeglądarce, po rozkrój i szablony."
+      },
+      "button": {
+        "en": "Open Meblomiar ↗",
+        "pl": "Otwórz Meblomiar ↗"
+      },
+      "url": "https://meblomiar.pl/meble/"
+    },
+    {
+      "id": "soon-archviz-viewer",
+      "category": "apps",
+      "soon": true,
+      "title": {
+        "en": "Archviz Viewer",
+        "pl": "Archviz Viewer"
+      },
+      "text": {
+        "en": "A building or an interior online in the browser, with floors and rooms to click through.",
+        "pl": "Budynek albo wnętrze online w przeglądarce, z piętrami i pomieszczeniami do klikania."
+      }
+    },
+    {
+      "id": "soon-yellowfix",
+      "category": "apps",
+      "soon": true,
+      "title": {
+        "en": "AI-YellowFix",
+        "pl": "AI-YellowFix"
+      },
+      "text": {
+        "en": "Removes the yellow tint from AI-generated images, with a before and after view and batch work.",
+        "pl": "Usuwa żółty odcień z obrazów generowanych przez AI, z podglądem przed i po oraz pracą na wielu plikach."
+      }
     },
     {
       "id": "kofi",
