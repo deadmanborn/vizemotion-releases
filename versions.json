@@ -14,11 +14,11 @@
   "manager": {
     "name": "VE Manager",
     "page": "https://vizemotion.com/lab/ve-manager/",
-    "stable": "0.7.5",
-    "download": "https://github.com/deadmanborn/vizemotion-releases/releases/download/ve-manager-0.7.5/ve-manager-0.7.5.mzp",
+    "stable": "0.7.6",
+    "download": "https://github.com/deadmanborn/vizemotion-releases/releases/download/ve-manager-0.7.6/ve-manager-0.7.6.mzp",
     "download_zip": "",
-    "notes": "Support note easier to see; See all in Discover drawn once",
-    "date": "2026-11-16"
+    "notes": "Links in Discover and the tool list open the page again",
+    "date": "2026-11-20"
   },
   "max_agent": {
     "name": "VE Max Agent",
